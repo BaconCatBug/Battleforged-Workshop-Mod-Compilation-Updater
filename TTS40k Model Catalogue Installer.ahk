@@ -17,6 +17,6 @@ if InStr(Caption, "Windows 10") {
 	}
 	exitapp
 	}else{
-Msgbox %  "This installer only supports Windows 10. Windows 7 is out of support, for the love of the Manperor Update now! Windows 8/8.1 is about to leave support, it sucks I know but you'll need to update soon." 
+Msgbox %  "This installer only supports Windows 10. Windows 7 is out of support, for the love of The Manperor, update now! Windows 8/8.1 is about to leave support, it sucks I know but you'll need to update soon." 
 exitapp
 }
