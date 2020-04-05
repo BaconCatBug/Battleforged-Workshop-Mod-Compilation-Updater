@@ -1,7 +1,8 @@
 ﻿#NoEnv
 SetWorkingDir %A_ScriptDir%
 #CommentFlag é
-éUrlDownloadToFile, https://github.com/BaconCatBug/FFRK-Farming-Macros/archive/master.zip , %A_Temp%\TTS40k_Model_Catalogue.zip
+
+RunWait, powershell.exe -command echo 'Downloading the Catalogue...' ; $ProgressPreference = 'SilentlyContinue'; $url='https://raw.github.com/BigSig/TTS-Model-Catalogue/master/TTS40k` Model` Catalogue.zip' ; $downloadtemp =  $env:temp+'\TTS40k_Model_Catalogue.zip' ; Invoke-WebRequest -Uri $url -OutFile $downloadtemp  
 
 objWMIService := ComObjGet("winmgmts:{impersonationLevel=impersonate}!\\" A_ComputerName "\root\cimv2")
 For objOperatingSystem in objWMIService.ExecQuery("Select * from Win32_OperatingSystem")
@@ -9,9 +10,11 @@ For objOperatingSystem in objWMIService.ExecQuery("Select * from Win32_Operating
    
 if InStr(Caption, "Windows 10") {
 	if(CheckSaveLocation()==1){
-	RunWait, Powershell.exe -command $localtemp = $env:temp+'\TTS40k_Model_Catalogue.zip' ;$pathtosaves = get-itempropertyvalue 'HKCU:\Software\Valve\Steam' 'SteamPath' ; $pathtosaves=$pathtosaves+'\steamapps\common\Tabletop Simulator\Tabletop Simulator_Data' ; Microsoft.PowerShell.Archive\expand-archive -force -path $localtemp -destinationpath $pathtosaves
+	RunWait, powershell.exe -command $localtemp = $env:temp+'\TTS40k_Model_Catalogue.zip' ;$pathtosaves = get-itempropertyvalue 'HKCU:\Software\Valve\Steam' 'SteamPath' ; $pathtosaves=$pathtosaves+'\steamapps\common\Tabletop Simulator\Tabletop Simulator_Data' ;  Microsoft.PowerShell.Archive\expand-archive -force -path $localtemp -destinationpath $pathtosaves
+	exitapp
 	}else{
-	RunWait, Powershell.exe -command $localtemp = $env:temp+'\TTS40k_Model_Catalogue.zip' ; $pathtosaves = [environment]::getfolderpath('mydocuments')+'\My Games\Tabletop Simulator' ;  Microsoft.PowerShell.Archive\expand-archive -force -path $localtemp -destinationpath $pathtosaves
+	RunWait, powershell.exe -command $localtemp = $env:temp+'\TTS40k_Model_Catalogue.zip' ; $pathtosaves = [environment]::getfolderpath('mydocuments')+'\My Games\Tabletop Simulator' ; Microsoft.PowerShell.Archive\expand-archive -force -path $localtemp -destinationpath $pathtosaves
+	exitapp
 	}
 }else{
 Msgbox %  "This installer only supports Windows 10. Windows 7 is out of support, for the love of the Manperor Update now! Windows 8/8.1 is about to leave support, it sucks I know but you'll need to update soon." 
