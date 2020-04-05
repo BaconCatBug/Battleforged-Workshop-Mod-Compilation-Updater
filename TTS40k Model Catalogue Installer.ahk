@@ -9,15 +9,6 @@ For objOperatingSystem in objWMIService.ExecQuery("Select * from Win32_Operating
    Caption := objOperatingSystem.Caption
    
 if InStr(Caption, "Windows 10") {
-	if(CheckSaveLocation()==1){
-	RunWait, powershell.exe -command $localtemp = $env:temp+'\TTS40k_Model_Catalogue.zip' ;$pathtosaves = get-itempropertyvalue 'HKCU:\Software\Valve\Steam' 'SteamPath' ; $pathtosaves=$pathtosaves+'\steamapps\common\Tabletop Simulator\Tabletop Simulator_Data' ;  Microsoft.PowerShell.Archive\expand-archive -force -path $localtemp -destinationpath $pathtosaves
-	if(%A_LastError%==0){
-	Msgbox "TTS40k Model Catalogue was installed!"
-	}else{
-	Msgbox "Something went wrong, please download the TTS40k Model Catalogue manually from https://github.com/BigSig/TTS-Model-Catalogue"
-	}
-	exitapp
-	}else{
 	RunWait, powershell.exe -command $localtemp = $env:temp+'\TTS40k_Model_Catalogue.zip' ; $pathtosaves = [environment]::getfolderpath('mydocuments')+'\My Games\Tabletop Simulator' ; Microsoft.PowerShell.Archive\expand-archive -force -path $localtemp -destinationpath $pathtosaves
 	if(%A_LastError%==0){
 	Msgbox "TTS40k Model Catalogue was installed!"
@@ -25,28 +16,7 @@ if InStr(Caption, "Windows 10") {
 	Msgbox "Something went wrong, please download the TTS40k Model Catalogue manually from https://github.com/BigSig/TTS-Model-Catalogue"
 	}
 	exitapp
-	}
-}else{
-Msgbox %  "This installer only supports Windows 10. Windows 7 is out of support, for the love of the Manperor Update now! Windows 8/8.1 is about to leave support, it sucks I know but you'll need to update soon." 
-}
-
-CheckSaveLocation(){
-Loop, Reg, HKEY_CURRENT_USER\Software\Berserk Games\Tabletop Simulator, KV
-{
-if (instr(A_LoopRegName, "ConfigGame")){
-    if (A_LoopRegType = "key")
-        value := ""
-    else
-    {
-        RegRead, value
-        if ErrorLevel
-            value := "*error*"
-    }
-	if(instr(value,"224c6f636174696f6e223a31")){
-	return 1
 	}else{
-	return 0
-	}
-}
-}
+Msgbox %  "This installer only supports Windows 10. Windows 7 is out of support, for the love of the Manperor Update now! Windows 8/8.1 is about to leave support, it sucks I know but you'll need to update soon." 
+exitapp
 }
