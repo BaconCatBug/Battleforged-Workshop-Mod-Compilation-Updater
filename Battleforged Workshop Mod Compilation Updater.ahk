@@ -14,12 +14,12 @@ if InStr(Caption, "10") {
 	FileRead, SuccessCheck, %SuccessCheckPath%
 	if InStr(SuccessCheck,"0"){
 	Msgbox The Battleforged Workshop Mod Compilation was installed!
-	}else{
+}else{
 	Msgbox Something went wrong, please try again. If this error persists, download the Battleforged Workshop Mod Compilation from https://github.com/BigSig/Battleforged-Workshop-Mod-Compilation and install it manually. (Instructions are included inside the zip.) 
 	}
 	FileDelete, %SuccessCheckPath%
 	exitapp
-	}else{
-Msgbox This installer only supports Windows 10. Windows 7 is out of support, for the love of The Manperor, update now! Windows 8/8.1 is about to leave support, it sucks I know but you'll need to update soon. Please download the Battleforged Workshop Mod Compilation from https://github.com/BigSig/Battleforged-Workshop-Mod-Compilation and install it manually. (Instructions are included inside the zip.)
-exitapp
+}else{
+	Msgbox This installer only supports Windows 10. Windows 7 is out of support, for the love of The Manperor, update now! Windows 8/8.1 is about to leave support, it sucks I know but you'll need to update soon. Please download the Battleforged Workshop Mod Compilation from https://github.com/BigSig/Battleforged-Workshop-Mod-Compilation and install it manually. (Instructions are included inside the zip.)
+	exitapp
 }
