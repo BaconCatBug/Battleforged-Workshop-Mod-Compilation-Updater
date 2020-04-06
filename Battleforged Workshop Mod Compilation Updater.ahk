@@ -13,7 +13,7 @@ if InStr(Caption, "10") {
 	SuccessCheckPath := A_Temp . "\BFWMCSuccessCheck.txt"
 	FileRead, SuccessCheck, %SuccessCheckPath%
 	if InStr(SuccessCheck,"0"){
-	Msgbox TTS40k Model Catalogue was installed!
+	Msgbox The Battleforged Workshop Mod Compilation was installed!
 	}else{
 	Msgbox Something went wrong, please try again. If this error persists, download the Battleforged Workshop Mod Compilation from https://github.com/BigSig/Battleforged-Workshop-Mod-Compilation and install it manually. (Instructions are included inside the zip.) 
 	}
