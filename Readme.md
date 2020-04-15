@@ -2,4 +2,4 @@ THIS UPDATER WORKS ON WINDOWS 10 ONLY. FOR OLDER VERSIONS OF WINDOWS AND MAC PLE
 
 THIS UPDATER ALSO INSTALLS THE COMPILATION IF YOU DON'T HAVE IT INSTALLED ALREADY YOU DO NOT NEED TO MANUALLY INSTALL IT
 
-Download the "Battleforged Workshop Mod Compilation Updater (Just Double Click Me).bat" by clicking "Clone or download" and then "Download ZIP", open the zip file and just double click the bat file.
+First, close Tabletop Simulator if it is running, then download the "Battleforged Workshop Mod Compilation Updater (Just Double Click Me).bat" by clicking "Clone or download", then "Download ZIP", open the zip file and just double click the bat file while Tabletop Simulator is closed. Then run Tabletop Simulator.
