@@ -4,8 +4,8 @@ THIS UPDATER ALSO INSTALLS THE COMPILATION IF YOU DON'T HAVE IT INSTALLED ALREAD
 
 Please subscribe to the following collection and watching the following videos before asking any questions:
 
-Collection: shorturl.at/drBJQ
+Collection: http://tiny.cc/TTSMods 
 
-Videos: shorturl.at/awxKX'
+Videos: http://tiny.cc/TTSVids
 
 Then, close Tabletop Simulator if it is running, then download the "Battleforged Workshop Mod Compilation Updater (Just Double Click Me).bat" by clicking "Clone or download", then "Download ZIP", open the zip file and just double click the bat file while Tabletop Simulator is closed. Then run Tabletop Simulator.
